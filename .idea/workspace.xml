@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e19efe00-64fa-47a8-8af5-bfec9ef80ace" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_retrieval.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_retrieval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/retrieval/demo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retrieval/retrieval.py" beforeDir="false" afterPath="$PROJECT_DIR$/retrieval/retrieval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image_database/9.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/upload_image/query.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload_image/query.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/retrieval.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/retrieval.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/upload_finish.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload_finish.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/image_retrieval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+            <state relative-caret-position="121">
+              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -49,10 +35,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/retrieval/retrieval.py" />
-        <option value="$PROJECT_DIR$/image_retrieval.py" />
         <option value="$PROJECT_DIR$/templates/upload.html" />
         <option value="$PROJECT_DIR$/templates/upload_finish.html" />
         <option value="$PROJECT_DIR$/templates/retrieval.html" />
+        <option value="$PROJECT_DIR$/image_retrieval.py" />
       </list>
     </option>
   </component>
@@ -67,6 +53,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -88,7 +75,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -194,7 +180,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14909886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -282,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image_retrieval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        <state relative-caret-position="121">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

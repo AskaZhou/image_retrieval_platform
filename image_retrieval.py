@@ -3,7 +3,7 @@ import cv2
 import time
 from datetime import timedelta
 from retrieval.create_thumb_images import create_thumb_images
-from flask import Flask, render_template, request, redirect, url_for, make_response,jsonify, flash
+from flask import Flask, render_template, request, redirect, url_for, make_response, jsonify, flash
 from retrieval.retrieval import load_model, load_data, extract_feature, load_query_image, sort_img, extract_feature_query
 
 # Create thumb images.
