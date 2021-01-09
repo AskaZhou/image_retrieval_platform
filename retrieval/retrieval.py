@@ -16,7 +16,7 @@ from PIL import Image
 
 def get_file_list(file_path_list, sort=True):
     """
-    Get list of file paths in one folder.
+    获取文件夹中的一个路径列表
     :param file_path: A folder path or path list.
     :return: file list: File path list of
     """
@@ -62,12 +62,13 @@ class Gallery(Dataset):
         return len(self.image_paths)
 
 
+#加载数据
 def load_data(data_path, batch_size=1, shuffle=False, transform='default'):
     data_transform = transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        transforms.Resize(256),     #把给定的图片resize到given size
+        transforms.CenterCrop(224), #在图片的中间区域进行裁剪
+        transforms.ToTensor(),      #转换张量
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  #用均值和标准差归一化张量图像
     ]) if transform == 'default' else transform
 
     image_path_list = get_file_list(data_path)
@@ -84,6 +85,7 @@ def load_data(data_path, batch_size=1, shuffle=False, transform='default'):
     return data_loader
 
 
+#提取特征
 def extract_feature(model, dataloaders, use_gpu=True):
     features = torch.FloatTensor()
     path_list = []
@@ -102,9 +104,10 @@ def extract_feature(model, dataloaders, use_gpu=True):
     return features, path_list
 
 
+#提取特征查询
 def extract_feature_query(model, img, use_gpu=True):
     c, h, w = img.size()
-    img = img.view(-1,c,h,w)
+    img = img.view(-1, c, h, w)
     use_gpu = use_gpu and torch.cuda.is_available()
     img = img.cuda() if use_gpu else img
     input_img = Variable(img)
@@ -115,6 +118,7 @@ def extract_feature_query(model, img, use_gpu=True):
     return ff
 
 
+#加载查询图像
 def load_query_image(query_path):
     data_transforms = transforms.Compose([
         transforms.Resize(256),
@@ -127,6 +131,7 @@ def load_query_image(query_path):
     return query_image
 
 
+#加载模型
 def load_model(pretrained_model=None, use_gpu=True):
     """
 

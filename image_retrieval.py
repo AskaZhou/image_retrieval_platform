@@ -41,49 +41,42 @@ app = Flask(__name__)
 def image_retrieval():
 
     basepath = os.path.dirname(__file__)    # current path
-    upload_path = os.path.join(basepath, 'static/upload_image','query.jpg')
+    upload_path = os.path.join(basepath, 'static/upload_image', 'query.jpg')
 
     if request.method == 'POST':
-        if request.form['submit'] == 'upload':
+        if request.form['submit'] == '更新':
             if len(request.files) == 0:
-                return render_template('upload_finish.html', message='Please select a picture file!')
+                return render_template('upload_finish.html', message='请选择图片！')
             else:
                 f = request.files['picture']
          
                 if not (f and allowed_file(f.filename)):
-                    # return jsonify({"error": 1001, "msg": "Examine picture extension, only png, PNG, jpg, JPG, or bmp supported."})
                     return render_template('upload_finish.html', message='Examine picture extension, png、PNG、jpg、JPG、bmp support.')
                 else:
 
                     f.save(upload_path)
              
-                    # transform image format and name with opencv.
                     img = cv2.imread(upload_path)
                     cv2.imwrite(os.path.join(basepath, 'static/upload_image', 'query.jpg'), img)
              
-                    return render_template('upload_finish.html', message='Upload successfully!')
+                    return render_template('upload_finish.html', message='更新成功！')
 
-        elif request.form['submit'] == 'retrieval':
+        elif request.form['submit'] == '检索':
             start_time = time.time()
-            # Query.
             query_image = load_query_image('./static/upload_image/query.jpg')
-            # Extract query features.
             query_feature = extract_feature_query(model=model, img=query_image)
-            # Sort.
             similarity, index = sort_img(query_feature, gallery_feature)
             sorted_paths = [image_paths[i] for i in index]
 
             print(sorted_paths)
             tmb_images = ['./static/thumb_images/' + os.path.split(sorted_path)[1] for sorted_path in sorted_paths]
-            # sorted_files = [os.path.split(sorted_path)[1] for sorted_path in sorted_paths]
 
-            return render_template('retrieval.html', message="Retrieval finished, cost {:3f} seconds.".format(time.time() - start_time),
+            return render_template('retrieval.html', message="检索结束, 共花费{:3f}秒.".format(time.time() - start_time),
             	sml1=similarity[0], sml2=similarity[1], sml3=similarity[2], sml4=similarity[3], sml5=similarity[4], sml6=similarity[5],
-            	img1_tmb=tmb_images[0], img2_tmb=tmb_images[1],img3_tmb=tmb_images[2],img4_tmb=tmb_images[3],img5_tmb=tmb_images[4],img6_tmb=tmb_images[5])
+            	img1_tmb=tmb_images[0], img2_tmb=tmb_images[1], img3_tmb=tmb_images[2], img4_tmb=tmb_images[3], img5_tmb=tmb_images[4], img6_tmb=tmb_images[5])
 
     return render_template('upload.html')
 
 
 if __name__ == '__main__':
-    # app.debug = True
     app.run(host='0.0.0.0', port=8080, debug=True)
